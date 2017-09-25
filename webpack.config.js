@@ -1,5 +1,7 @@
 var path = require('path')
 var webpack = require('webpack')
+var autoprefixer = require('autoprefixer')
+var precss = require('precss')
 
 module.exports = {
     devtool: 'cheap-module-eval-source-map',
@@ -16,7 +18,15 @@ module.exports = {
     plugins: [
         new webpack.optimize.OccurrenceOrderPlugin(),
         new webpack.HotModuleReplacementPlugin(),
-        new webpack.NoEmitOnErrorsPlugin()
+        new webpack.LoaderOptionsPlugin({
+            options: {
+                context: __dirname,
+                postcss: [
+                    autoprefixer,
+                    precss
+                ]
+            }
+        })
     ],
     module: {
         loaders: [
@@ -47,6 +57,10 @@ module.exports = {
                 options: {
                     plugins: ['transform-runtime']
                 },
+            },
+            {
+                test:   /\.css$/,
+                loader: "style-loader!css-loader!postcss-loader"
             }
         ]
     }

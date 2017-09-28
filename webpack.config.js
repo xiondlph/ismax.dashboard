@@ -1,53 +1,43 @@
-var path = require('path')
-var webpack = require('webpack')
+const path = require('path');
+const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 module.exports = {
-    devtool: 'cheap-module-eval-source-map',
     entry: [
+        'react-hot-loader/patch',
         'webpack-hot-middleware/client',
-        'babel-polyfill',
-        './src/index'
+        './src/index.js'
+    ],
+    plugins: [
+        new webpack.HotModuleReplacementPlugin(),
+        new CleanWebpackPlugin(['dist']),
+        new HtmlWebpackPlugin({
+            title: 'Output Management',
+            template: 'index.template.ejs'
+        })
     ],
     output: {
-        path: path.join(__dirname, 'dist'),
         filename: 'bundle.js',
-        publicPath: '/static/'
+        path: path.resolve(__dirname, 'dist'),
+        publicPath: '/'
     },
-    plugins: [
-        new webpack.optimize.OccurrenceOrderPlugin(),
-        new webpack.HotModuleReplacementPlugin(),
-        new webpack.NoEmitOnErrorsPlugin()
-    ],
+
     module: {
-        loaders: [
+        rules: [
             {
                 test: /\.js$/,
-                loaders: ['eslint-loader'],
-                include: [
-                    path.resolve(__dirname, 'src'),
-                ],
-                enforce: 'pre'
-            },
-            {
-                loaders: 'react-hot-loader',
                 include: [
                     path.resolve(__dirname, "src"),
                 ],
-                test: /\.js$/,
-                options: {
-                    plugins: ['transform-runtime']
-                },
-            },
-            {
-                loaders: 'babel-loader',
-                include: [
-                    path.resolve(__dirname, "src"),
-                ],
-                test: /\.js$/,
-                options: {
-                    plugins: ['transform-runtime']
-                },
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                        presets: ['env', 'react'],
+                        plugins: ['react-hot-loader/babel']
+                    }
+                }
             }
         ]
     }
-}
+};

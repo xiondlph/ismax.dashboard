@@ -1,0 +1,26 @@
+html, body {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%
+}
+
+#root, .app {
+    width: 100%;
+    height: 100%;
+}
+
+.cont {
+    display: flex;
+    min-height: 100%
+}
+
+.left {
+    width: 150px;
+    background: green;
+}
+
+.right {
+    flex: 1;
+    background: blue;
+}

@@ -2,8 +2,7 @@ import React, { Component } from 'react'
 
 export default class App extends Component {
     onBtnClick() {
-        console.log(Promise);
-        console.log(fetch);
+        //
     }
 
     render() {

@@ -5,8 +5,9 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 module.exports = {
     entry: [
-        'react-hot-loader/patch',
         'webpack-hot-middleware/client',
+        'react-hot-loader/patch',
+        'whatwg-fetch',
         './src/index.js'
     ],
     plugins: [
@@ -29,12 +30,15 @@ module.exports = {
                 test: /\.js$/,
                 include: [
                     path.resolve(__dirname, "src"),
+                    /whatwg-fetch/
                 ],
                 use: {
                     loader: 'babel-loader',
                     options: {
                         presets: ['env', 'react'],
-                        plugins: ['react-hot-loader/babel']
+                        plugins: [
+                            'transform-runtime'
+                        ]
                     }
                 }
             }

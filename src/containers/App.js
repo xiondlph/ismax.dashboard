@@ -1,7 +1,12 @@
 import React, { Component } from 'react'
 
 export default class App extends Component {
+    onBtnClick() {
+        console.log(Promise);
+        console.log(fetch);
+    }
+
     render() {
-        return <div>Привет из App</div>
+        return <button onClick={this.onBtnClick}>Привет из App</button>
     }
 }

@@ -5,6 +5,7 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 module.exports = {
     entry: [
+        'babel-polyfill',
         'webpack-hot-middleware/client',
         'react-hot-loader/patch',
         'whatwg-fetch',
@@ -35,16 +36,16 @@ module.exports = {
             {
                 test: /\.js$/,
                 include: [
-                    path.resolve(__dirname, "src"),
-                    /whatwg-fetch/
+                    path.resolve(__dirname, 'src')/*,
+                    /whatwg-fetch/*/
                 ],
                 use: {
                     loader: 'babel-loader',
                     options: {
-                        presets: ['env', 'react'],
+                        presets: ['env', 'react']/*,
                         plugins: [
                             'transform-runtime'
-                        ]
+                        ]*/
                     }
                 }
             },

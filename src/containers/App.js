@@ -12,7 +12,7 @@ export default class App extends Component {
                     <div className='dashboard-main-wrap'>
                         <div className='dashboard-main-sidebar'>
                             <ul className='dashboard-main-sidebar-menu'>
-                                <li className='dashboard-main-sidebar-menu-item'>
+                                <li className='dashboard-main-sidebar-menu-item dashboard-main-sidebar-menu-item_active'>
                                     <span className='fa fa-user'></span>Профиль
                                 </li>
                                 <li className='dashboard-main-sidebar-menu-item'>

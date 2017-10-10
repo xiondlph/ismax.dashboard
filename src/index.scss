@@ -2,6 +2,7 @@ $fa-font-path: "~font-awesome/fonts";
 @import '~font-awesome/scss/font-awesome.scss';
 
 $header-height: 65px;
+$sidebar-menu-item-height: $header-height;
 
 html, body, #root, .app {
   padding: 0;
@@ -11,6 +12,7 @@ html, body, #root, .app {
 }
 
 .dashboard {
+  font-family: 'Open Sans', 'Helvetica Neue', helvetica, arial, verdana, sans-serif;
   flex-direction: column;
   display: flex;
   height: 100%;
@@ -53,8 +55,24 @@ html, body, #root, .app {
         margin: 0;
 
         &-item {
-          height: 65px;
-          line-height: $header-height;
+          line-height: $sidebar-menu-item-height;
+          height: $sidebar-menu-item-height;
+          font-size: 14px;
+          color: #adb3b8;
+
+          .fa {
+            display: inline-block;
+            text-align: center;
+            line-height: 65px;
+            font-size: 20px;
+            width: 65px;
+          }
+
+          &:hover {
+            background-color: #3c4a57;
+            color: #fff;
+            transition: color 0.5s;
+          }
         }
       }
     }

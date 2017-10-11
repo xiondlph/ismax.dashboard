@@ -5,8 +5,13 @@ export default class App extends Component {
         return <div className='app'>
             <div className='dashboard'>
                 <div className='dashboard-header'>
-                    <div className='dashboard-header-logo'></div>
-                    <div className='dashboard-header-toolbar'></div>
+                    <div className='dashboard-header-logo'>
+                        <span className='dashboard-header-logo-icon'></span>
+                        ISMAX icsystem
+                    </div>
+                    <div className='dashboard-header-toolbar'>
+                        <a><span className='fa fa-navicon'></span></a>
+                    </div>
                 </div>
                 <div className='dashboard-main'>
                     <div className='dashboard-main-wrap'>

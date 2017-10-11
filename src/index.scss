@@ -8,6 +8,17 @@
 $fa-font-path: "~font-awesome/fonts";
 @import '~font-awesome/scss/font-awesome.scss';
 
+@font-face {
+    font-family: 'icsystem';
+    src:url('./fonts/icsystem/icsystem.eot?-xpanr9');
+    src:url('./fonts/icsystem/icsystem.eot?#iefix-xpanr9') format('embedded-opentype'),
+        url('./fonts/icsystem/icsystem.woff?-xpanr9') format('woff'),
+        url('./fonts/icsystem/icsystem.ttf?-xpanr9') format('truetype'),
+        url('./fonts/icsystem/icsystem.svg?-xpanr9#icsystem') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
 $header-height: 64px;
 $sidebar-menu-item-height: $header-height;
 
@@ -29,14 +40,29 @@ html, body, #root, .app {
     @include box-shadow(0, 1px, 2px, 0, rgba(0, 0, 0, 0.2));
     width: 100%;
     height: $header-height;
+    line-height: $header-height;
     display: flex;
     flex-direction: row;
     z-index: 2;
 
     &-logo {
       background-color: #e05d6f;
+      font-size: 16px;
       height: 100%;
       width: 250px;
+      color: #fff;
+
+      &-icon {
+        font-family: icsystem;
+        display: inline-block;
+        text-align: center;
+        font-size: 25px;
+        width: 48px;
+
+        &:before {
+          content: "\e60c";
+        }
+      }
     }
 
     &-toolbar {

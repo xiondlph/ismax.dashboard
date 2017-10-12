@@ -47,17 +47,25 @@ html, body, #root, .app {
 
     &-logo {
       background-color: #e05d6f;
+      transition: width 0.5s;
+      white-space: nowrap;
+      overflow: hidden;
       font-size: 16px;
       height: 100%;
       width: 250px;
       color: #fff;
+
+      &_mini {
+        width: 64px;
+      }
 
       &-icon {
         font-family: icsystem;
         display: inline-block;
         text-align: center;
         font-size: 25px;
-        width: 48px;
+        width: 64px;
+        float: left;
 
         &:before {
           content: "\e60c";
@@ -81,7 +89,7 @@ html, body, #root, .app {
     }
 
     &-sidebar {
-      $sidebar: 'dashboard-main-sidebar';
+      $sidebar: &;
       background-color: #32404e;
       transition: width 0.5s;
 
@@ -94,6 +102,7 @@ html, body, #root, .app {
           line-height: $sidebar-menu-item-height;
           height: $sidebar-menu-item-height;
           transition: width 0.5s;
+          white-space: nowrap;
           position: relative;
           overflow: hidden;
           font-size: 14px;
@@ -101,8 +110,12 @@ html, body, #root, .app {
           color: #adb3b8;
           width: 250px;
 
-          .dashboard-main-sidebar_mini & {
+          #{$sidebar}_mini & {
             width: 64px;
+
+            &:hover {
+              overflow: inherit;
+            }
           }
 
           .fa {
@@ -111,17 +124,23 @@ html, body, #root, .app {
             line-height: $sidebar-menu-item-height;
             margin-left: 5px;
             font-size: 18px;
-            width: 55px;
+            width: 59px;
+            float: left;
           }
 
           &-text {
             display: inline-block;
+            width: 186px;
+
+            #{$sidebar}-menu-item:hover & {
+              background-color: #3c4a57;
+            }
           }
 
           &:hover {
             background-color: #3c4a57;
-            color: #fff;
             transition: color 0.5s;
+            color: #fff;
           }
 
           &_active {

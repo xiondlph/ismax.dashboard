@@ -18,7 +18,7 @@ class Dashboard extends Component {
         return <div className='app'>
             <div className='dashboard'>
                 <div className='dashboard-header'>
-                    <div className='dashboard-header-logo'>
+                    <div className={classNames('dashboard-header-logo', `dashboard-header-logo_${sidebar}`)}>
                         <span className='dashboard-header-logo-icon'></span>
                         ISMAX icsystem
                     </div>

@@ -81,8 +81,9 @@ html, body, #root, .app {
     }
 
     &-sidebar {
+      $sidebar: 'dashboard-main-sidebar';
       background-color: #32404e;
-      width: 250px;
+      transition: width 0.5s;
 
       &-menu {
         list-style: none;
@@ -92,10 +93,17 @@ html, body, #root, .app {
         &-item {
           line-height: $sidebar-menu-item-height;
           height: $sidebar-menu-item-height;
+          transition: width 0.5s;
           position: relative;
+          overflow: hidden;
           font-size: 14px;
           cursor: default;
           color: #adb3b8;
+          width: 250px;
+
+          .dashboard-main-sidebar_mini & {
+            width: 64px;
+          }
 
           .fa {
             display: inline-block;
@@ -104,6 +112,10 @@ html, body, #root, .app {
             margin-left: 5px;
             font-size: 18px;
             width: 55px;
+          }
+
+          &-text {
+            display: inline-block;
           }
 
           &:hover {
@@ -127,6 +139,14 @@ html, body, #root, .app {
             }
           }
         }
+      }
+
+      &_full {
+        width: 250px;
+      }
+
+      &_mini {
+        width: 64px;
       }
     }
 

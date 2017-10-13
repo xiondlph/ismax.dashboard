@@ -2,30 +2,18 @@ import React, { Component } from 'react'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import classNames from 'classnames'
-import * as dashboardActions from '../actions/DashboardActions'
+import * as dashboardActions from '../../actions/DashboardActions'
+import Header from './Header'
 
 class Dashboard extends Component {
-    toggleSidebarState() {
-        const { sidebar } = this.props.dashboard
-
-        if (sidebar === 'full') this.props.dashboardActions.setSidebarState('mini')
-        if (sidebar === 'mini') this.props.dashboardActions.setSidebarState('full')
-    }
-
     render() {
-        const { sidebar } = this.props.dashboard
+        const
+            {sidebar} = this.props.dashboard,
+            {setSidebarState} = this.props.dashboardActions
 
         return <div className='app'>
             <div className='dashboard'>
-                <div className='dashboard-header'>
-                    <div className={classNames('dashboard-header-logo', `dashboard-header-logo_${sidebar}`)}>
-                        <span className='dashboard-header-logo-icon'></span>
-                        ISMAX icsystem
-                    </div>
-                    <div className='dashboard-header-toolbar'>
-                        <a onClick={::this.toggleSidebarState}><span className='fa fa-navicon'></span></a>
-                    </div>
-                </div>
+                <Header sidebar={sidebar} setSidebarState={setSidebarState} />
                 <div className='dashboard-main'>
                     <div className='dashboard-main-wrap'>
                         <div className={classNames('dashboard-main-sidebar', `dashboard-main-sidebar_${sidebar}`)}>

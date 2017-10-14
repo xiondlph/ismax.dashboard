@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import classNames from 'classnames'
 
+import './Header.scss'
+
 export default class Dashboard extends Component {
     toggleSidebarState() {
         const { sidebar } = this.props

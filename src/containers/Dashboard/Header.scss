@@ -1,0 +1,41 @@
+.dashboard-header {
+  @include box-shadow(0, 1px, 2px, 0, rgba(0, 0, 0, 0.2));
+  width: 100%;
+  height: $header-height;
+  line-height: $header-height;
+  display: flex;
+  flex-direction: row;
+  z-index: 2;
+
+  &-logo {
+    background-color: #e05d6f;
+    transition: width 0.5s;
+    white-space: nowrap;
+    overflow: hidden;
+    font-size: 16px;
+    height: 100%;
+    width: 250px;
+    color: #fff;
+
+    &_mini {
+      width: 64px;
+    }
+
+    &-icon {
+      font-family: icsystem;
+      display: inline-block;
+      text-align: center;
+      font-size: 25px;
+      width: 64px;
+      float: left;
+
+      &:before {
+        content: "\e60c";
+      }
+    }
+  }
+
+  &-toolbar {
+    flex: 1;
+  }
+}

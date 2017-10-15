@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
-import * as dashboardActions from '../../actions/DashboardActions'
+import * as dashboardActions from '../../redux/actions/DashboardActions'
 import Header from './Header'
 import Main from './Main'
 

@@ -5,7 +5,6 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 console.log(process.env.NODE_ENV);
 module.exports = {
     entry: [
-        'babel-polyfill',
         'whatwg-fetch',
         './src/index.js'
     ],

@@ -36,6 +36,44 @@
   }
 
   &-toolbar {
+    padding: 20px;
     flex: 1;
+
+    &-btn {
+      color: $dashboard-text-color-gray;
+      text-align: center;
+      line-height: 24px;
+      cursor: pointer;
+      display: block;
+      height: 24px;
+      width: 24px;
+
+      &-toggle {
+        float: left;
+      }
+
+      &-logout {
+        float: right;
+      }
+    }
+
+    &-label {
+      color: $dashboard-text-color-gray;
+      display: inline-block;
+      margin-right: 10px;
+      line-height: 24px;
+      float: right;
+      height: 24px;
+    }
+
+    &-photo {
+      display: inline-block;
+      margin-right: 10px;
+      line-height: 24px;
+      color: cadetblue;
+      font-size: 24px;
+      height: 24px;
+      float: right;
+    }
   }
 }

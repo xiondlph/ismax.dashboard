@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Проверка Header снапшота 1`] = `
+<div
+  className="dashboard-header"
+>
+  <div
+    className="dashboard-header-logo dashboard-header-logo_undefined"
+  >
+    <span
+      className="dashboard-header-logo-icon"
+    />
+    ISMAX icsystem
+  </div>
+  <div
+    className="dashboard-header-toolbar"
+  >
+    <a
+      onClick={[Function]}
+    >
+      <span
+        className="fa fa-navicon"
+      />
+    </a>
+  </div>
+</div>
+`;

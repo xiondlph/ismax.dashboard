@@ -1,9 +1,12 @@
 import React, { Component } from 'react'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
+import { withRouter } from 'react-router-dom'
 import * as dashboardActions from '../../redux/actions/DashboardActions'
-import Header from './Header'
-import Main from './Main'
+import Header from '../Header'
+import Main from '../Main'
+
+import './Dashboard.scss'
 
 class Dashboard extends Component {
     render() {
@@ -11,12 +14,16 @@ class Dashboard extends Component {
             {sidebar} = this.props.dashboard,
             {setSidebarState} = this.props.dashboardActions
 
-        return <div className='app'>
-            <div className='dashboard'>
-                <Header sidebar={sidebar} setSidebarState={setSidebarState} />
-                <Main sidebar={sidebar} />
+        return (
+            <div className='app'>
+                <div className='dashboard'>
+                    <Header sidebar={sidebar} setSidebarState={setSidebarState} />
+                    <Main sidebar={sidebar}>
+                        { this.props.children }
+                    </Main>
+                </div>
             </div>
-        </div>
+        )
     }
 }
 
@@ -32,4 +39,4 @@ function mapDispatchToProps(dispatch) {
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Dashboard)
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Dashboard))

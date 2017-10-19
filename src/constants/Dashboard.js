@@ -1,0 +1,9 @@
+/**
+ * Константы для панели
+ */
+
+export const DASHBOARD_SHOW_NOTICE = 'DASHBOARD_SHOW_NOTICE'
+export const DASHBOARD_HIDE_NOTICE = 'DASHBOARD_HIDE_NOTICE'
+export const DASHBOARD_SET_SIDEBAR_STATE = 'SET_SIDEBAR_STATE'
+export const DASHBOARD_SIDEBAR_STATE_FULL = 'full'
+export const DASHBOARD_SIDEBAR_STATE_MINI = 'mini'

@@ -1,3 +1,8 @@
+/**
+ * Точка входа приложения
+ * с реализацией HMR для react
+ */
+
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { AppContainer } from 'react-hot-loader'

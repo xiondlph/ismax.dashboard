@@ -1,3 +1,7 @@
+/**
+ * Точка входа для Webpack кофигов
+ */
+
 var env;
 
 switch (process.env.NODE_ENV) {

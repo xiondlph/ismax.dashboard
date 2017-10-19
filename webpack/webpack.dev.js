@@ -1,3 +1,7 @@
+/**
+ * Webpack конфиг для dev окружения
+ */
+
 const webpack = require('webpack');
 const merge = require('webpack-merge');
 const common = require('./webpack.common.js');

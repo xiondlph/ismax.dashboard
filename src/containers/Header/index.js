@@ -1,5 +1,13 @@
+/**
+ * Контейнер шапки панели
+ */
+
 import React, { Component } from 'react'
 import classNames from 'classnames'
+import {
+    DASHBOARD_SIDEBAR_STATE_FULL,
+    DASHBOARD_SIDEBAR_STATE_MINI
+} from '../../constants/Dashboard'
 
 import './Header.scss'
 
@@ -7,12 +15,12 @@ export default class Header extends Component {
     toggleSidebarState() {
         const { sidebar } = this.props
 
-        if (sidebar === 'full') this.props.setSidebarState('mini')
-        if (sidebar === 'mini') this.props.setSidebarState('full')
+        if (sidebar === DASHBOARD_SIDEBAR_STATE_FULL) this.props.setSidebarState('mini')
+        if (sidebar === DASHBOARD_SIDEBAR_STATE_MINI) this.props.setSidebarState('full')
     }
 
     render() {
-        const { sidebar } = this.props
+        const { sidebar, profile } = this.props
 
         return (
             <div className='dashboard-header'>
@@ -29,9 +37,7 @@ export default class Header extends Component {
                         <span className='dashboard-header-toolbar-btn-toggle-icon fa fa-sign-out'></span>
                     </a>
 
-                    <a className='dashboard-header-toolbar-label'>
-                        admin@ismax.ru
-                    </a>
+                    <a className='dashboard-header-toolbar-label'>{ profile.email }</a>
 
                     <a className='dashboard-header-toolbar-photo'>
                         <span className='dashboard-header-toolbar-photo-icon fa fa-user-circle-o'></span>

@@ -1,3 +1,7 @@
+/**
+ * Настройки маршрутизиции (список маршрутов)
+ */
+
 import React, { Component } from 'react'
 import { HashRouter, Route } from 'react-router-dom'
 import Dashboard from '../containers/Dashboard'

@@ -15,6 +15,14 @@ app.use(webpackDevMiddleware(compiler, {
 
 app.use(webpackHotMiddleware(compiler));
 
+app.get('/api/profile', function (req, res) {
+    res.send({
+        profile: {
+            email: 'shukhrat@ismax.ru'
+        }
+    });
+});
+
 // Serve the files on port 3001.
 app.listen(3001, function () {
     console.log('Example app listening on port 3001!\n');

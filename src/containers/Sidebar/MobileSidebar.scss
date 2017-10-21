@@ -1,0 +1,137 @@
+.dashboard-sidebar-mobile {
+
+  &-wrap {
+    background-color: #32404e;
+    transition: width 0.5s;
+    position: absolute;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    height: 100%;
+    z-index: 4;
+    width: 0;
+    top: 0;
+
+    @include respond-to(mobile) {
+      overflow-y: auto;
+      width: 250px;
+    }
+
+    .dashboard-sidebar-mobile_collapsed & {
+      overflow-y: hidden;
+      width: 0;
+    }
+  }
+
+  &-mask {
+    background-color: #32404e;
+    position: fixed;
+    display: none;
+    height: 100%;
+    width: 100%;
+    opacity: .3;
+    z-index: 3;
+    left: 0;
+    top: 0;
+
+    @include respond-to(mobile) {
+      display: block;
+    }
+
+    .dashboard-sidebar-mobile_collapsed & {
+      width: 0;
+    }
+  }
+
+  &-menu {
+    min-height: calc(100% - 64px);
+    padding-top: $sidebar-menu-item-height;
+
+    &-logo {
+      @include box-shadow(0, 1px, 2px, 0, rgba(0, 0, 0, 0.2));
+      line-height: $header-height;
+      background-color: #e05d6f;
+      height: $header-height;
+      position: absolute;
+      font-size: 16px;
+      width: 250px;
+      color: #fff;
+      z-index: 1;
+      top: 0;
+
+      &-icon {
+        font-family: icsystem;
+        display: inline-block;
+        width: $header-height;
+        text-align: center;
+        font-size: 25px;
+        float: left;
+
+        &:before {
+          content: "\e60c";
+        }
+      }
+    }
+
+    &-item {
+      line-height: $sidebar-menu-item-height;
+      height: $sidebar-menu-item-height;
+      transition: width 0.5s;
+      white-space: nowrap;
+      position: relative;
+      overflow: hidden;
+      font-size: 14px;
+      cursor: default;
+      display: block;
+      color: #adb3b8;
+      width: 250px;
+
+      .dashboard-sidebar_collapsed & {
+        width: 64px;
+
+        &:hover {
+          overflow: inherit;
+        }
+      }
+
+      & &-icon {
+        display: inline-block;
+        text-align: center;
+        line-height: $sidebar-menu-item-height;
+        margin-left: 5px;
+        font-size: 18px;
+        width: 59px;
+        float: left;
+      }
+
+      &-text {
+        display: inline-block;
+        width: 186px;
+
+        .dashboard-sidebar-menu-item:hover & {
+          background-color: #3c4a57;
+        }
+      }
+
+      &:hover {
+        background-color: #3c4a57;
+        transition: color 0.5s;
+        color: #fff;
+      }
+
+      &_active {
+        background-color: #475360;
+
+        &:before {
+          background-color: #e05d6f;
+          position: absolute;
+          display: block;
+          content: " ";
+          height: 100%;
+          width: 5px;
+          left: 0;
+          top: 0;
+        }
+      }
+    }
+  }
+}

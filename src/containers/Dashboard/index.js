@@ -10,6 +10,7 @@ import * as dashboardActions from '../../redux/actions/DashboardActions'
 import * as profileActions from '../../redux/actions/ProfileActions'
 import Header from '../Header'
 import Main from '../Main'
+import MobileSidebar from '../Sidebar/MobileSidebar'
 
 import './Dashboard.scss'
 
@@ -22,7 +23,7 @@ class Dashboard extends Component {
 
     render() {
         const
-            { sidebar, notice, noticeMessage } = this.props.dashboard,
+            { sidebar, mobileSidebar, notice, noticeMessage } = this.props.dashboard,
             { setSidebarState, setMobileSidebarState, hideNotice } = this.props.dashboardActions,
             { profile } = this.props
 
@@ -38,6 +39,7 @@ class Dashboard extends Component {
                     <Main sidebar={sidebar} notice={notice} noticeMessage={noticeMessage} hideNotice={hideNotice}>
                         { this.props.children }
                     </Main>
+                    <MobileSidebar sidebar={mobileSidebar} setMobileSidebarState={setMobileSidebarState} />
                 </div>
             </div>
         )

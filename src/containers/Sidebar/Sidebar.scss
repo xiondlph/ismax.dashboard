@@ -1,9 +1,25 @@
-.dashboard-main-sidebar {
-  $sidebar: &;
+.dashboard-sidebar {
   background-color: #32404e;
   transition: width 0.5s;
+  width: 250px;
+  z-index: 1;
+
+  @include respond-to(mobile) {
+    position: absolute;
+    height: 100%;
+    width: 0;
+  }
+
+  &_collapsed {
+    width: 64px;
+
+    @include respond-to(mobile) {
+      width: 0;
+    }
+  }
 
   &-menu {
+    height: 100%;
 
     &-item {
       line-height: $sidebar-menu-item-height;
@@ -18,15 +34,23 @@
       color: #adb3b8;
       width: 250px;
 
-      #{$sidebar}_mini & {
+      @include respond-to(mobile) {
+        width: 0;
+      }
+
+      .dashboard-sidebar_collapsed & {
         width: 64px;
+
+        @include respond-to(mobile) {
+          width: 0;
+        }
 
         &:hover {
           overflow: inherit;
         }
       }
 
-      .fa {
+      & &-icon {
         display: inline-block;
         text-align: center;
         line-height: $sidebar-menu-item-height;
@@ -40,7 +64,7 @@
         display: inline-block;
         width: 186px;
 
-        #{$sidebar}-menu-item:hover & {
+        .dashboard-sidebar-menu-item:hover & {
           background-color: #3c4a57;
         }
       }
@@ -66,13 +90,5 @@
         }
       }
     }
-  }
-
-  &_full {
-    width: 250px;
-  }
-
-  &_mini {
-    width: 64px;
   }
 }

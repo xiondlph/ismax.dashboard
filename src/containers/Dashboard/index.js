@@ -23,13 +23,18 @@ class Dashboard extends Component {
     render() {
         const
             { sidebar, notice, noticeMessage } = this.props.dashboard,
-            { setSidebarState, hideNotice } = this.props.dashboardActions,
+            { setSidebarState, setMobileSidebarState, hideNotice } = this.props.dashboardActions,
             { profile } = this.props
 
         return (
             <div className='app'>
                 <div className='dashboard'>
-                    <Header sidebar={sidebar} setSidebarState={setSidebarState} profile={profile}/>
+                    <Header
+                        sidebar={sidebar}
+                        profile={profile}
+                        setSidebarState={setSidebarState}
+                        setMobileSidebarState={setMobileSidebarState}
+                    />
                     <Main sidebar={sidebar} notice={notice} noticeMessage={noticeMessage} hideNotice={hideNotice}>
                         { this.props.children }
                     </Main>

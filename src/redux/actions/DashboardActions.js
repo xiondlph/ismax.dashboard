@@ -4,13 +4,23 @@
 
 import {
     DASHBOARD_HIDE_NOTICE,
-    DASHBOARD_SET_SIDEBAR_STATE
+    DASHBOARD_SET_SIDEBAR_STATE,
+    DASHBOARD_SET_MOBILE_SIDEBAR_STATE
 } from '../../constants/Dashboard'
 
 export const setSidebarState = sidebarState => {
 
     return {
         type: DASHBOARD_SET_SIDEBAR_STATE,
+        payload: sidebarState
+    }
+
+}
+
+export const setMobileSidebarState = sidebarState => {
+
+    return {
+        type: DASHBOARD_SET_MOBILE_SIDEBAR_STATE,
         payload: sidebarState
     }
 

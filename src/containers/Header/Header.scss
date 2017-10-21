@@ -9,16 +9,25 @@
 
   &-logo {
     background-color: #e05d6f;
+    height: $header-height;
     transition: width 0.5s;
     white-space: nowrap;
     overflow: hidden;
     font-size: 16px;
-    height: 100%;
     width: 250px;
     color: #fff;
 
-    &_mini {
+    @include respond-to(mobile) {
+      position: absolute;
+      width: 0;
+    }
+
+    &_collapsed {
       width: 64px;
+
+      @include respond-to(mobile) {
+        width: 0;
+      }
     }
 
     &-icon {
@@ -50,6 +59,18 @@
 
       &-toggle {
         float: left;
+
+        &_mobile {
+          display: none;
+        }
+
+        @include respond-to(mobile) {
+          display: none;
+
+          &_mobile {
+            display: block;
+          }
+        }
       }
 
       &-logout {

@@ -9,7 +9,12 @@
   }
 
   &-content {
-    min-height: calc(100vh - 65px);
+
+    // Хак для IE10+
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+      min-height: calc(100vh - 65px);
+    }
+
     background-color: #f4f3eb;
     flex: 1;
   }

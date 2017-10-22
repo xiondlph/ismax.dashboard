@@ -22,7 +22,6 @@ export default class MobileSidebar extends Component {
 
     resize(e) {
         if (e.target.innerWidth <= 600 && this.props.sidebar !== DASHBOARD_SIDEBAR_STATE_COLLAPSED) {
-            console.log('test')
             this.props.setMobileSidebarState(DASHBOARD_SIDEBAR_STATE_COLLAPSED)
         }
     }

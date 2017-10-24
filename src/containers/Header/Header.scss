@@ -1,15 +1,17 @@
+$dashboard-logo-bg-color: #e05d6f;
+
 .dashboard-header {
   @include box-shadow(0, 1px, 2px, 0, rgba(0, 0, 0, 0.2));
   width: 100%;
-  height: $header-height;
-  line-height: $header-height;
+  height: $dashboard-header-height;
+  line-height: $dashboard-header-height;
   display: flex;
   flex-direction: row;
   z-index: 2;
 
   &-logo {
-    background-color: #e05d6f;
-    height: $header-height;
+    background-color: $dashboard-logo-bg-color;
+    height: $dashboard-header-height;
     transition: width 0.5s;
     white-space: nowrap;
     overflow: hidden;

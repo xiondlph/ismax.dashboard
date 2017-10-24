@@ -8,12 +8,15 @@ import {
     DASHBOARD_SET_SIDEBAR_STATE,
     DASHBOARD_SET_MOBILE_SIDEBAR_STATE,
     DASHBOARD_SIDEBAR_STATE_EXPANDED,
-    DASHBOARD_SIDEBAR_STATE_COLLAPSED
+    DASHBOARD_SIDEBAR_STATE_COLLAPSED,
+	DASHBOARD_NOTICE_HIDDEN,
 } from '../../constants/Dashboard'
 
 const initialState = {
     sidebar: DASHBOARD_SIDEBAR_STATE_EXPANDED,
-    mobileSidebar: DASHBOARD_SIDEBAR_STATE_COLLAPSED
+    mobileSidebar: DASHBOARD_SIDEBAR_STATE_COLLAPSED,
+	notice: DASHBOARD_NOTICE_HIDDEN,
+	noticeMessage: ''
 }
 
 export default function dashboard(state = initialState, action) {

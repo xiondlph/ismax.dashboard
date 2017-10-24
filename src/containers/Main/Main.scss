@@ -1,3 +1,5 @@
+$dashboard-content-bg-color: #f4f3eb;
+
 .dashboard-main {
   overflow: auto;
   z-index: 1;
@@ -15,7 +17,7 @@
       min-height: calc(100vh - 65px);
     }
 
-    background-color: #f4f3eb;
+    background-color: $dashboard-content-bg-color;
     flex: 1;
   }
 }

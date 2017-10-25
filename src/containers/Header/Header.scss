@@ -1,23 +1,21 @@
-$dashboard-logo-bg-color: #e05d6f;
-
 .dashboard-header {
   @include box-shadow(0, 1px, 2px, 0, rgba(0, 0, 0, 0.2));
-  width: 100%;
-  height: $dashboard-header-height;
   line-height: $dashboard-header-height;
-  display: flex;
+  height: $dashboard-header-height;
   flex-direction: row;
+  display: flex;
+  width: 100%;
   z-index: 2;
 
   &-logo {
-    background-color: $dashboard-logo-bg-color;
+    background-color: $dashboard-header-logo-bg-color;
+    color: $dashboard-text-color-white;
     height: $dashboard-header-height;
     transition: width 0.5s;
     white-space: nowrap;
     overflow: hidden;
     font-size: 16px;
     width: 250px;
-    color: #fff;
 
     @include respond-to(mobile) {
       position: absolute;
@@ -90,10 +88,10 @@ $dashboard-logo-bg-color: #e05d6f;
     }
 
     &-photo {
+      color: $dashboard-header-user-photo-color;
       display: inline-block;
       margin-right: 10px;
       line-height: 24px;
-      color: cadetblue;
       font-size: 24px;
       height: 24px;
       float: right;

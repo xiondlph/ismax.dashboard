@@ -1,6 +1,15 @@
 $fa-font-path: "~font-awesome/fonts";
-$dashboard-header-height: 64px;
 
-$sidebar-menu-item-height: $dashboard-header-height;
-
+// Цвета
+$dashboard-text-color-white: #ffffff;
 $dashboard-text-color-gray: #919191;
+
+//Шапка
+$dashboard-header-height: 64px;
+$dashboard-header-logo-bg-color: #e05d6f;
+$dashboard-header-user-photo-color: #5f9ea0;
+
+// Сайдбар
+$sidebar-expanded-width: 250px;
+$sidebar-collapsed-width: $dashboard-header-height;
+$sidebar-menu-item-height: $dashboard-header-height;

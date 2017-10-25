@@ -13,7 +13,7 @@
 
     @include respond-to(mobile) {
       overflow-y: auto;
-      width: 250px;
+      width: $sidebar-expanded-width;
     }
 
     .dashboard-sidebar-mobile_collapsed & {
@@ -43,25 +43,25 @@
   }
 
   &-menu {
-    min-height: calc(100% - 64px);
     padding-top: $sidebar-menu-item-height;
+    min-height: calc(100% - 64px);
 
     &-logo {
       @include box-shadow(0, 1px, 2px, 0, rgba(0, 0, 0, 0.2));
-      line-height: $header-height;
+      line-height: $sidebar-menu-item-height;
+      height: $sidebar-menu-item-height;
+      width: $sidebar-expanded-width;
       background-color: #e05d6f;
-      height: $header-height;
       position: absolute;
       font-size: 16px;
-      width: 250px;
       color: #fff;
       z-index: 1;
       top: 0;
 
       &-icon {
+        width: $sidebar-menu-item-height;
         font-family: icsystem;
         display: inline-block;
-        width: $header-height;
         text-align: center;
         font-size: 25px;
         float: left;
@@ -75,6 +75,7 @@
     &-item {
       line-height: $sidebar-menu-item-height;
       height: $sidebar-menu-item-height;
+      width: $sidebar-expanded-width;
       transition: width 0.5s;
       white-space: nowrap;
       position: relative;
@@ -83,10 +84,9 @@
       cursor: default;
       display: block;
       color: #adb3b8;
-      width: 250px;
 
       .dashboard-sidebar_collapsed & {
-        width: 64px;
+        width: $sidebar-collapsed-width;
 
         &:hover {
           overflow: inherit;
@@ -94,9 +94,9 @@
       }
 
       & &-icon {
+        line-height: $sidebar-menu-item-height;
         display: inline-block;
         text-align: center;
-        line-height: $sidebar-menu-item-height;
         margin-left: 5px;
         font-size: 18px;
         width: 59px;

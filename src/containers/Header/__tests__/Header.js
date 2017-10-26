@@ -13,10 +13,10 @@ configure({ adapter: new Adapter() });
 
 test('Проверка Header снапшота', () => {
     const
-		sidebar = DASHBOARD_SIDEBAR_STATE_COLLAPSED,
-		profile = {},
-		setSidebarState = jest.fn(),
-		setMobileSidebarState = jest.fn(),
+        sidebar = DASHBOARD_SIDEBAR_STATE_EXPANDED,
+        profile = {},
+        setSidebarState = jest.fn(),
+        setMobileSidebarState = jest.fn(),
         component = renderer.create(
             <Header sidebar={sidebar} profile={profile} setSidebarState={setSidebarState} setMobileSidebarState={setMobileSidebarState}/>
         )
@@ -27,12 +27,12 @@ test('Проверка Header снапшота', () => {
 
 test('Проверка смены состояния Sidebar', () => {
     const
-        sidebar = DASHBOARD_SIDEBAR_STATE_COLLAPSED,
+        sidebar = DASHBOARD_SIDEBAR_STATE_EXPANDED,
         profile = {
             email: 'test@email.com'
         },
         setSidebarState = () => {
-            header.setProps({ sidebar: DASHBOARD_SIDEBAR_STATE_EXPANDED })
+            header.setProps({ sidebar: DASHBOARD_SIDEBAR_STATE_COLLAPSED })
         },
 		setMobileSidebarState = () => {
 			header.setProps({ sidebar: DASHBOARD_SIDEBAR_STATE_EXPANDED })
@@ -42,8 +42,13 @@ test('Проверка смены состояния Sidebar', () => {
         );
 
     expect(header.find('.dashboard-header-logo').exists()).toEqual(true)
-    expect(header.find('.dashboard-header-logo').hasClass('dashboard-header-logo_collapsed')).toEqual(true)
-
-    header.find('.dashboard-header-toolbar a').simulate('click');
     expect(header.find('.dashboard-header-logo').hasClass('dashboard-header-logo_collapsed')).toEqual(false)
+    expect(header.instance().props.sidebar).toEqual('EXPANDED')
+
+    header.find('.dashboard-header-toolbar-btn-toggle').first().simulate('click')
+    expect(header.find('.dashboard-header-logo').hasClass('dashboard-header-logo_collapsed')).toEqual(true)
+    expect(header.instance().props.sidebar).toEqual('COLLAPSED')
+
+    header.find('.dashboard-header-toolbar-btn-toggle_mobile').simulate('click')
+    expect(header.instance().props.sidebar).toEqual('EXPANDED')
 })

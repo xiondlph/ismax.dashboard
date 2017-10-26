@@ -5,7 +5,7 @@ exports[`Проверка Header снапшота 1`] = `
   className="dashboard-header"
 >
   <div
-    className="dashboard-header-logo dashboard-header-logo_undefined"
+    className="dashboard-header-logo"
   >
     <span
       className="dashboard-header-logo-icon"
@@ -16,10 +16,36 @@ exports[`Проверка Header снапшота 1`] = `
     className="dashboard-header-toolbar"
   >
     <a
+      className="dashboard-header-toolbar-btn dashboard-header-toolbar-btn-toggle"
       onClick={[Function]}
     >
       <span
-        className="fa fa-navicon"
+        className="dashboard-header-toolbar-btn-toggle-icon fa fa-navicon"
+      />
+    </a>
+    <a
+      className="dashboard-header-toolbar-btn dashboard-header-toolbar-btn-toggle dashboard-header-toolbar-btn-toggle_mobile"
+      onClick={[Function]}
+    >
+      <span
+        className="dashboard-header-toolbar-btn-toggle-icon fa fa-navicon"
+      />
+    </a>
+    <a
+      className="dashboard-header-toolbar-btn dashboard-header-toolbar-btn-logout"
+    >
+      <span
+        className="dashboard-header-toolbar-btn-toggle-icon fa fa-sign-out"
+      />
+    </a>
+    <a
+      className="dashboard-header-toolbar-label"
+    />
+    <a
+      className="dashboard-header-toolbar-photo"
+    >
+      <span
+        className="dashboard-header-toolbar-photo-icon fa fa-user-circle-o"
       />
     </a>
   </div>

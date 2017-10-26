@@ -1,15 +1,25 @@
 $fa-font-path: "~font-awesome/fonts";
 
-// Цвета
+// Общие Цвета
 $dashboard-text-color-white: #ffffff;
 $dashboard-text-color-gray: #919191;
 
 //Шапка
 $dashboard-header-height: 64px;
+$dashboard-header-logo-expanded-width: 250px;
+$dashboard-header-logo-collapsed-width: $dashboard-header-height;
 $dashboard-header-logo-bg-color: #e05d6f;
 $dashboard-header-user-photo-color: #5f9ea0;
 
 // Сайдбар
-$sidebar-expanded-width: 250px;
-$sidebar-collapsed-width: $dashboard-header-height;
-$sidebar-menu-item-height: $dashboard-header-height;
+$dashboard-sidebar-gb-color: #32404e;
+$dashboard-sidebar-menu-item-text-color: #adb3b8;
+$dashboard-sidebar-menu-item-hover-bg-color: #3c4a57;
+$dashboard-sidebar-menu-item-active-bg-color: #475360;
+$dashboard-sidebar-menu-item-marker-bg-color: $dashboard-header-logo-bg-color;
+$dashboard-sidebar-expanded-width: $dashboard-header-logo-expanded-width;
+$dashboard-sidebar-collapsed-width: $dashboard-header-height;
+$dashboard-sidebar-menu-item-height: $dashboard-header-height;
+
+// Контентная часть
+$dashboard-content-bg-color: #f4f3eb;

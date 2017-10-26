@@ -9,13 +9,13 @@
 
   &-logo {
     background-color: $dashboard-header-logo-bg-color;
+    width: $dashboard-header-logo-expanded-width;
     color: $dashboard-text-color-white;
     height: $dashboard-header-height;
     transition: width 0.5s;
     white-space: nowrap;
     overflow: hidden;
     font-size: 16px;
-    width: 250px;
 
     @include respond-to(mobile) {
       position: absolute;
@@ -23,7 +23,7 @@
     }
 
     &_collapsed {
-      width: 64px;
+      width: $dashboard-header-logo-collapsed-width;
 
       @include respond-to(mobile) {
         width: 0;
@@ -31,11 +31,11 @@
     }
 
     &-icon {
+      width: $dashboard-header-logo-collapsed-width;
       font-family: icsystem;
       display: inline-block;
       text-align: center;
       font-size: 25px;
-      width: 64px;
       float: left;
 
       &:before {

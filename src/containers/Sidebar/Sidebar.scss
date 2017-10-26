@@ -1,6 +1,6 @@
 .dashboard-sidebar {
-  width: $sidebar-expanded-width;
-  background-color: #32404e;
+  background-color: $dashboard-sidebar-gb-color;
+  width: $dashboard-sidebar-expanded-width;
   transition: width 0.5s;
   z-index: 1;
 
@@ -11,7 +11,7 @@
   }
 
   &_collapsed {
-    width: $sidebar-collapsed-width;
+    width: $dashboard-sidebar-collapsed-width;
 
     @include respond-to(mobile) {
       width: 0;
@@ -22,9 +22,10 @@
     height: 100%;
 
     &-item {
-      line-height: $sidebar-menu-item-height;
-      height: $sidebar-menu-item-height;
-      width: $sidebar-expanded-width;
+      line-height: $dashboard-sidebar-menu-item-height;
+      color: $dashboard-sidebar-menu-item-text-color;
+      height: $dashboard-sidebar-menu-item-height;
+      width: $dashboard-sidebar-expanded-width;
       transition: width 0.5s;
       white-space: nowrap;
       position: relative;
@@ -32,14 +33,13 @@
       font-size: 14px;
       cursor: default;
       display: block;
-      color: #adb3b8;
 
       @include respond-to(mobile) {
         width: 0;
       }
 
       .dashboard-sidebar_collapsed & {
-        width: $sidebar-collapsed-width;
+        width: $dashboard-sidebar-collapsed-width;
 
         @include respond-to(mobile) {
           width: 0;
@@ -51,7 +51,7 @@
       }
 
       & &-icon {
-        line-height: $sidebar-menu-item-height;
+        line-height: $dashboard-sidebar-menu-item-height;
         display: inline-block;
         text-align: center;
         margin-left: 5px;
@@ -65,21 +65,21 @@
         width: 186px;
 
         .dashboard-sidebar-menu-item:hover & {
-          background-color: #3c4a57;
+          background-color: $dashboard-sidebar-menu-item-hover-bg-color;
         }
       }
 
       &:hover {
-        background-color: #3c4a57;
+        background-color: $dashboard-sidebar-menu-item-hover-bg-color;
+        color: $dashboard-text-color-white;
         transition: color 0.5s;
-        color: #fff;
       }
 
       &_active {
-        background-color: #475360;
+        background-color: $dashboard-sidebar-menu-item-active-bg-color;
 
         &:before {
-          background-color: #e05d6f;
+          background-color: $dashboard-sidebar-menu-item-marker-bg-color;
           position: absolute;
           display: block;
           content: " ";

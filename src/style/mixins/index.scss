@@ -1,3 +1,4 @@
+// Тень
 @mixin box-shadow($h-shadow,$v-shadow,$blur,$spread,$shadow-color) {
   -webkit-box-shadow: $h-shadow $v-shadow $blur $spread $shadow-color;
   -moz-box-shadow: $h-shadow $v-shadow $blur $spread $shadow-color;

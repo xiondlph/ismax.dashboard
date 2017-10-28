@@ -16,7 +16,7 @@ export function getProfile() {
             type: PROFILE_REQUEST
         })
 
-        fetch('/api/profile', { credentials: 'include' })
+        return fetch('/api/profile', { credentials: 'include' })
             .then(response => {
                 return response.json()
             })

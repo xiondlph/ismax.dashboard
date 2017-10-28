@@ -2,11 +2,12 @@ import React from 'react'
 import renderer from 'react-test-renderer'
 import { configure, shallow } from 'enzyme'
 import Adapter from 'enzyme-adapter-react-16'
+import { HashRouter } from 'react-router-dom'
 import Header from '../index'
 
 import {
-	DASHBOARD_SIDEBAR_STATE_EXPANDED,
-	DASHBOARD_SIDEBAR_STATE_COLLAPSED
+    DASHBOARD_SIDEBAR_STATE_EXPANDED,
+    DASHBOARD_SIDEBAR_STATE_COLLAPSED
 } from '../../../constants/Dashboard'
 
 configure({ adapter: new Adapter() });
@@ -18,7 +19,9 @@ test('Проверка Header снапшота', () => {
         setSidebarState = jest.fn(),
         setMobileSidebarState = jest.fn(),
         component = renderer.create(
-            <Header sidebar={sidebar} profile={profile} setSidebarState={setSidebarState} setMobileSidebarState={setMobileSidebarState}/>
+            <HashRouter>
+                <Header sidebar={sidebar} profile={profile} setSidebarState={setSidebarState} setMobileSidebarState={setMobileSidebarState}/>
+            </HashRouter>
         )
 
     let tree = component.toJSON()

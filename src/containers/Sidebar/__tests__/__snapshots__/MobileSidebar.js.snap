@@ -1,0 +1,100 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MobileSidebar Проверка MobileSidebar снапшота 1`] = `
+<div
+  className="dashboard-sidebar-mobile"
+>
+  <div
+    className="dashboard-sidebar-mobile-mask"
+    onClick={[Function]}
+  />
+  <div
+    className="dashboard-sidebar-mobile-wrap"
+  >
+    <div
+      className="dashboard-sidebar-mobile-menu"
+    >
+      <div
+        className="dashboard-sidebar-mobile-menu-logo"
+      >
+        <span
+          className="dashboard-sidebar-mobile-menu-logo-icon"
+        />
+        ISMAX icsystem
+      </div>
+      <a
+        aria-current={false}
+        className="dashboard-sidebar-mobile-menu-item"
+        href="#/"
+        onClick={[Function]}
+        style={undefined}
+      >
+        <span
+          className="dashboard-sidebar-mobile-menu-item-icon fa fa-user"
+        />
+        <div
+          className="dashboard-sidebar-mobile-menu-item-text"
+        >
+          Профиль
+        </div>
+      </a>
+      <a
+        aria-current="true"
+        className="dashboard-sidebar-mobile-menu-item dashboard-sidebar-mobile-menu-item_active"
+        href="#/payment"
+        onClick={[Function]}
+        style={Object {}}
+      >
+        <span
+          className="dashboard-sidebar-mobile-menu-item-icon fa fa-credit-card"
+        />
+        <div
+          className="dashboard-sidebar-mobile-menu-item-text"
+        >
+          Оплата
+        </div>
+      </a>
+      <a
+        aria-current={false}
+        className="dashboard-sidebar-mobile-menu-item"
+        href="#/referrals"
+        onClick={[Function]}
+        style={undefined}
+      >
+        <span
+          className="dashboard-sidebar-mobile-menu-item-icon fa fa-users"
+        />
+        <div
+          className="dashboard-sidebar-mobile-menu-item-text"
+        >
+          Рефералы
+        </div>
+      </a>
+      <div
+        className="dashboard-sidebar-mobile-menu-item"
+      >
+        <span
+          className="dashboard-sidebar-mobile-menu-item-icon fa fa-question"
+        />
+        <span
+          className="dashboard-sidebar-mobile-menu-item-text"
+        >
+          Помощь
+        </span>
+      </div>
+      <div
+        className="dashboard-sidebar-mobile-menu-item"
+      >
+        <span
+          className="dashboard-sidebar-mobile-menu-item-icon fa fa-sign-out"
+        />
+        <span
+          className="dashboard-sidebar-mobile-menu-item-text"
+        >
+          Выход
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+`;

@@ -5,7 +5,7 @@ import {
     DASHBOARD_SET_MOBILE_SIDEBAR_STATE
 } from '../../../constants/Dashboard'
 
-describe('Dashboard аctions', () => {
+describe('Dashboard ctions', () => {
     it('setSidebarState', () => {
         const
             payload = 'EXPANDED',

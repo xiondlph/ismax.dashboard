@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Проверка Header снапшота 1`] = `
+exports[`Header Проверка Header снапшота 1`] = `
 <div
   className="dashboard-header"
 >

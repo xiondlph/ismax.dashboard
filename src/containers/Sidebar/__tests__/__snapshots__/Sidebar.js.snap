@@ -1,0 +1,84 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Sidebar Проверка Sidebar снапшота 1`] = `
+<div
+  className="dashboard-sidebar"
+>
+  <div
+    className="dashboard-sidebar-menu"
+  >
+    <a
+      aria-current={false}
+      className="dashboard-sidebar-menu-item"
+      href="#/"
+      onClick={[Function]}
+      style={undefined}
+    >
+      <span
+        className="dashboard-sidebar-menu-item-icon fa fa-user"
+      />
+      <div
+        className="dashboard-sidebar-menu-item-text"
+      >
+        Профиль
+      </div>
+    </a>
+    <a
+      aria-current="true"
+      className="dashboard-sidebar-menu-item dashboard-sidebar-menu-item_active"
+      href="#/payment"
+      onClick={[Function]}
+      style={Object {}}
+    >
+      <span
+        className="dashboard-sidebar-menu-item-icon fa fa-credit-card"
+      />
+      <div
+        className="dashboard-sidebar-menu-item-text"
+      >
+        Оплата
+      </div>
+    </a>
+    <a
+      aria-current={false}
+      className="dashboard-sidebar-menu-item"
+      href="#/referrals"
+      onClick={[Function]}
+      style={undefined}
+    >
+      <span
+        className="dashboard-sidebar-menu-item-icon fa fa-users"
+      />
+      <div
+        className="dashboard-sidebar-menu-item-text"
+      >
+        Рефералы
+      </div>
+    </a>
+    <div
+      className="dashboard-sidebar-menu-item"
+    >
+      <span
+        className="dashboard-sidebar-menu-item-icon fa fa-question"
+      />
+      <span
+        className="dashboard-sidebar-menu-item-text"
+      >
+        Помощь
+      </span>
+    </div>
+    <div
+      className="dashboard-sidebar-menu-item"
+    >
+      <span
+        className="dashboard-sidebar-menu-item-icon fa fa-sign-out"
+      />
+      <span
+        className="dashboard-sidebar-menu-item-text"
+      >
+        Выход
+      </span>
+    </div>
+  </div>
+</div>
+`;

@@ -1,22 +1,11 @@
-import { Component } from 'react'
+/**
+ * Точка входа в набор страниц
+ */
 
-class Profile extends Component {
-    render() {
-        return 'Profile'
-    }
-}
+import Profile from './Profile'
+import Payment from './Payment'
+import Referrals from './Referrals'
 
-class Payment extends Component {
-    render() {
-        return 'Payment'
-    }
-}
-
-class Referrals extends Component {
-    render() {
-        return 'Referrals'
-    }
-}
 
 export {
     Profile,

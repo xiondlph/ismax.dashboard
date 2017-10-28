@@ -1,5 +1,5 @@
 /**
- * Набор действий с данними профиля
+ * Набор действий с данными профиля
  */
 
 import { DASHBOARD_SHOW_NOTICE } from '../../constants/Dashboard'

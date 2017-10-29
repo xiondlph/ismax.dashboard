@@ -7,16 +7,24 @@ import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import * as dashboardActions from '../redux/actions/DashboardActions'
 import * as profileActions from '../redux/actions/ProfileActions'
-import { Settings } from '../forms/index'
+import { Settings } from '../components/forms/index'
 
 class Profile extends Component {
-    settingsSubmit(values) {
-        console.log(values);
+    saveProfile(values){
+        console.log(values)
+        console.log(this)
     }
 
     render() {
+        const
+            { email, address } = this.props.profile,
+            settingsValues = {
+                email,
+                address
+            }
+
         return (
-            <Settings onSubmit={::this.settingsSubmit} />
+            <Settings saveProfile={::this.saveProfile} initialValues={settingsValues}/>
         )
     }
 }

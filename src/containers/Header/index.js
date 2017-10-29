@@ -57,7 +57,7 @@ export default class Header extends Component {
                         <span className='dashboard-header-toolbar-btn-toggle-icon fa fa-navicon'></span>
                     </a>
 
-                    <a className='dashboard-header-toolbar-btn dashboard-header-toolbar-btn-logout'>
+                    <a className='dashboard-header-toolbar-btn dashboard-header-toolbar-btn-logout' data-tip='Выход'>
                         <span className='dashboard-header-toolbar-btn-toggle-icon fa fa-sign-out'></span>
                     </a>
 

@@ -18,7 +18,8 @@ app.use(webpackHotMiddleware(compiler));
 app.get('/api/profile', function (req, res) {
     res.send({
         profile: {
-            email: 'shukhrat@ismax.ru'
+            email: 'shukhrat@ismax.ru',
+            address: '188.32.156.173'
         }
     });
 });

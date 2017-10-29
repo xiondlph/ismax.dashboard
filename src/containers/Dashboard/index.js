@@ -6,6 +6,7 @@ import React, { Component } from 'react'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
+import ReactTooltip from 'react-tooltip'
 import * as dashboardActions from '../../redux/actions/DashboardActions'
 import * as profileActions from '../../redux/actions/ProfileActions'
 import Header from '../Header'
@@ -40,6 +41,7 @@ class Dashboard extends Component {
                         { this.props.children }
                     </Main>
                     <MobileSidebar sidebar={mobileSidebar} setMobileSidebarState={setMobileSidebarState} />
+                    <ReactTooltip effect='solid' type='error'/>
                 </div>
             </div>
         )

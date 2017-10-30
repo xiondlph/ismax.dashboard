@@ -1,0 +1,37 @@
+.dashboard-field-text {
+  background-color: white;
+  display: flex;
+  height: 30px;
+  margin: 10px;
+
+  &_focused {
+    box-shadow: 0 0 0 1px indianred;
+  }
+
+  &-input {
+    background-color: white;
+    outline: none;
+    border: none;
+    height: 30px;
+    padding: 0;
+    flex: 1;
+  }
+
+  &-trigger {
+    color: $dashboard-text-color-gray;
+    text-align: center;
+    line-height: 30px;
+    font-size: 20px;
+    display: none;
+    height: 30px;
+    width: 30px;
+
+    &_show {
+      display: block;
+    }
+
+    &-icon {
+      cursor: pointer;
+    }
+  }
+}

@@ -4,24 +4,32 @@
 
 import React, { Component } from 'react'
 import classNames from 'classnames'
+import ReactTooltip from 'react-tooltip'
 
 import './TextField.scss'
 
+const Trigger = props => {
+    const { tip, icon } = props
+
+    return (
+        <div className='dashboard-field-text-trigger'>
+            <span
+                className={`dashboard-field-text-trigger-icon fa fa-${icon}`}
+                data-tip={tip}
+            />
+        </div>
+    )
+}
+
+const InvalidTrigger = props => {
+    const { error } = props
+
+    return <Trigger tip={error} icon='exclamation-circle' />
+}
+
 export default class TextField extends Component {
-    constructor(props) {
-        super(props)
-
-        this.state = {
-            fucused: false
-        };
-    }
-
-    onFocus() {
-        this.setState({ fucused: true })
-    }
-
-    onBlur() {
-        this.setState({ fucused: false })
+    componentDidUpdate() {
+        ReactTooltip.rebuild();
     }
 
     onChange(e) {
@@ -31,31 +39,24 @@ export default class TextField extends Component {
     }
     render() {
         const
-            { value } = this.props.input,
-            { error } = this.props.meta
+            { value, onFocus, onBlur } = this.props.input,
+            { error, active } = this.props.meta
 
         return (
             <div className={classNames({
                 'dashboard-field-text': true,
-                'dashboard-field-text_focused': this.state.fucused
+                'dashboard-field-text_focused': active
             })}>
                 <input
                     className='dashboard-field-text-input'
                     type='text'
                     value={value}
-                    onChange={::this.onChange}
-                    onFocus={::this.onFocus}
-                    onBlur={::this.onBlur}
+                    onChange={ ::this.onChange }
+                    onFocus={ onFocus }
+                    onBlur={ onBlur }
                 />
-                <div className={classNames({
-                    'dashboard-field-text-trigger': true,
-                    'dashboard-field-text-trigger_show': !!error
-                })}>
-                        <span
-                            className='dashboard-field-text-trigger-icon fa fa-exclamation-circle'
-                            data-tip
-                        />
-                </div>
+                <Trigger tip='mushkaz' icon='question' />
+                {error && (<InvalidTrigger error={error}/>)}
             </div>
         )
     }

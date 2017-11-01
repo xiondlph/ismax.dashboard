@@ -1,30 +1,60 @@
+$dashboard-textfield-border-color: #adb3b8;
+$dashboard-textfield-border-focused-color: #6495ed;
+
 .dashboard-field-text {
+  border: .5px solid $dashboard-textfield-border-color;
   background-color: white;
+  border-radius: 3px;
+  position: relative;
   display: flex;
-  height: 30px;
+  height: 37px;
   margin: 10px;
 
   &_focused {
-    box-shadow: 0 0 0 1px indianred;
+    border: .5px solid $dashboard-textfield-border-focused-color;
+
+    .dashboard-field-text-label {
+      color: $dashboard-textfield-border-focused-color;
+    }
+  }
+
+  &_filled {
+    .dashboard-field-text-label {
+      font-size: 10px;
+      top: 3px;
+    }
   }
 
   &-input {
-    background-color: white;
+    background-color: transparent;
+    padding: 16px 0 3px 10px;
     outline: none;
     border: none;
-    height: 30px;
-    padding: 0;
+    height: 18px;
     flex: 1;
+  }
+
+  &-label {
+    color: $dashboard-textfield-border-color;
+    transition: top .2s, font-size .2s;
+    position: absolute;
+    font-size: 14px;
+    left: 10px;
+    top: 17px;
   }
 
   &-trigger {
     color: $dashboard-text-color-gray;
     text-align: center;
-    line-height: 30px;
+    line-height: 37px;
     font-size: 20px;
     display: block;
-    height: 30px;
+    height: 37px;
     width: 30px;
+
+    &_error {
+      color: indianred;
+    }
 
     &-icon {
       cursor: pointer;

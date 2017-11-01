@@ -41,7 +41,7 @@ class Dashboard extends Component {
                         { this.props.children }
                     </Main>
                     <MobileSidebar sidebar={mobileSidebar} setMobileSidebarState={setMobileSidebarState} />
-                    <ReactTooltip effect='solid' type='error'/>
+                    <ReactTooltip effect='solid' />
                 </div>
             </div>
         )

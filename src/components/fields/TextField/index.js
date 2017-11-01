@@ -5,31 +5,29 @@
 import React, { Component } from 'react'
 import classNames from 'classnames'
 import ReactTooltip from 'react-tooltip'
+import Trigger from './Trigger'
+import InvalidTrigger from './InvalidTrigger'
 
 import './TextField.scss'
 
-const Trigger = props => {
-    const { tip, icon } = props
-
-    return (
-        <div className='dashboard-field-text-trigger'>
-            <span
-                className={`dashboard-field-text-trigger-icon fa fa-${icon}`}
-                data-tip={tip}
-            />
-        </div>
-    )
-}
-
-const InvalidTrigger = props => {
-    const { error } = props
-
-    return <Trigger tip={error} icon='exclamation-circle' />
-}
-
 export default class TextField extends Component {
+    constructor(props) {
+        super(props)
+
+        this.state = {
+            filled: false
+        }
+    }
+
     componentDidUpdate() {
+        const { input: { value } } = this.props
         ReactTooltip.rebuild();
+
+        if (this.state.filled !== !!value) {
+            this.setState({
+                filled: !!value
+            })
+        }
     }
 
     onChange(e) {
@@ -45,7 +43,8 @@ export default class TextField extends Component {
         return (
             <div className={classNames({
                 'dashboard-field-text': true,
-                'dashboard-field-text_focused': active
+                'dashboard-field-text_focused': active,
+                'dashboard-field-text_filled': this.state.filled
             })}>
                 <input
                     className='dashboard-field-text-input'
@@ -55,7 +54,8 @@ export default class TextField extends Component {
                     onFocus={ onFocus }
                     onBlur={ onBlur }
                 />
-                <Trigger tip='mushkaz' icon='question' />
+                <div className='dashboard-field-text-label'>Label</div>
+                <Trigger tip='mushkaz' icon='question' handler={() => alert('mushkaz')}/>
                 {error && (<InvalidTrigger error={error}/>)}
             </div>
         )

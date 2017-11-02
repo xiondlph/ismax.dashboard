@@ -6,6 +6,7 @@ $dashboard-textfield-border-focused-color: #6495ed;
   background-color: white;
   border-radius: 3px;
   position: relative;
+  padding-right: 5px;
   display: flex;
   height: 37px;
   margin: 10px;
@@ -47,10 +48,10 @@ $dashboard-textfield-border-focused-color: #6495ed;
     color: $dashboard-text-color-gray;
     text-align: center;
     line-height: 37px;
-    font-size: 20px;
+    font-size: 15px;
     display: block;
     height: 37px;
-    width: 30px;
+    width: 20px;
 
     &_error {
       color: indianred;

@@ -58,7 +58,7 @@ export default class Header extends Component {
                     </a>
 
                     <a className='dashboard-header-toolbar-btn dashboard-header-toolbar-btn-logout' data-tip='Выход'>
-                        <span className='dashboard-header-toolbar-btn-toggle-icon fa fa-sign-out'></span>
+                        <span className='dashboard-header-toolbar-btn-toggle-icon fa fa-power-off'></span>
                     </a>
 
                     <a className='dashboard-header-toolbar-label'>{ profile.email }</a>

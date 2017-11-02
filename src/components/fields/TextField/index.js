@@ -20,8 +20,19 @@ export default class TextField extends Component {
     }
 
     componentDidUpdate() {
-        const { input: { value } } = this.props
+
+        // Обновим тултипы
         ReactTooltip.rebuild();
+
+        this.updateLabelPosition()
+    }
+
+    componentDidMount() {
+        this.updateLabelPosition()
+    }
+
+    updateLabelPosition() {
+        const { input: { value } } = this.props
 
         if (this.state.filled !== !!value) {
             this.setState({
@@ -35,10 +46,29 @@ export default class TextField extends Component {
 
         onChange(e.target.value)
     }
+
+    triggers() {
+        const { triggers } = this.props
+        let items = []
+
+        for(let index in triggers) {
+            items.push({
+                key: index,
+                ...triggers[index]
+            })
+        }
+
+        return items.map(item => <Trigger key={item.key} tip={item.tip} icon={item.icon} handler={item.handler}/>)
+    }
+
+
     render() {
         const
-            { value, onFocus, onBlur } = this.props.input,
-            { error, active } = this.props.meta
+            {
+                input: { value, onFocus, onBlur },
+                meta: { error, active },
+                label
+            } = this.props
 
         return (
             <div className={classNames({
@@ -54,9 +84,9 @@ export default class TextField extends Component {
                     onFocus={ onFocus }
                     onBlur={ onBlur }
                 />
-                <div className='dashboard-field-text-label'>Label</div>
-                <Trigger tip='mushkaz' icon='question' handler={() => alert('mushkaz')}/>
+                <div className='dashboard-field-text-label'>{label}</div>
                 {error && (<InvalidTrigger error={error}/>)}
+                {::this.triggers()}
             </div>
         )
     }

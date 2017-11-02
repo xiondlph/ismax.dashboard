@@ -21,12 +21,43 @@ class SettingsForm extends Component {
 
     render() {
         const
-            { handleSubmit, pristine, submitting} = this.props;
+            { handleSubmit, pristine, submitting} = this.props,
+            triggers = {
+                email: {
+                    info: {
+                        tip: 'meshkaz',
+                        icon: 'question',
+                        handler() {
+                            console.log('info');
+                        }
+                    },
+
+                    payment: {
+                        tip: 'Пополнить запросы',
+                        icon: 'credit-card',
+                        handler() {
+                            console.log('Оплата')
+                        }
+                    }
+                }
+            }
 
         return (
             <form onSubmit={handleSubmit(::this.settingsSubmit)}>
-                <Field name='email' component={TextField} type='text' validate={this.email} meshkaz='meshkaz' />
-                <Field name='address' component={TextField} type='text' />
+                <Field
+                    name='email'
+                    component={TextField}
+                    type='text'
+                    validate={this.email}
+                    label='E-mail'
+                    triggers={triggers.email}
+                />
+                <Field
+                    name='address'
+                    component={TextField}
+                    type='text'
+                    label='IP адрес'
+                />
                 <div>
                     <button type='submit' disabled={pristine || submitting}>Сохранить</button>
                 </div>

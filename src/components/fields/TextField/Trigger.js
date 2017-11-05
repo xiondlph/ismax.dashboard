@@ -3,6 +3,7 @@
  */
 
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import classNames from 'classnames'
 
 class Trigger extends Component {
@@ -31,6 +32,13 @@ class Trigger extends Component {
             </div>
         )
     }
+}
+
+Trigger.propTypes = {
+    tip: PropTypes.string.isRequired,
+    icon: PropTypes.string.isRequired,
+    type: PropTypes.string.isRequired,
+    handler: PropTypes.func
 }
 
 export default Trigger

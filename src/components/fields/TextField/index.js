@@ -3,6 +3,7 @@
  */
 
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import classNames from 'classnames'
 import ReactTooltip from 'react-tooltip'
 import Trigger from './Trigger'
@@ -58,7 +59,14 @@ export default class TextField extends Component {
             })
         }
 
-        return items.map(item => <Trigger key={item.key} tip={item.tip} icon={item.icon} handler={item.handler}/>)
+        return items.map(item => (<Trigger
+                key={item.key}
+                tip={item.tip}
+                icon={item.icon}
+                type={item.type}
+                handler={item.handler}
+            />)
+        )
     }
 
 
@@ -74,7 +82,8 @@ export default class TextField extends Component {
             <div className={classNames({
                 'dashboard-field-text': true,
                 'dashboard-field-text_focused': active,
-                'dashboard-field-text_filled': this.state.filled
+                'dashboard-field-text_filled': this.state.filled,
+                'dashboard-field-text_error': error
             })}>
                 <input
                     className='dashboard-field-text-input'
@@ -90,4 +99,12 @@ export default class TextField extends Component {
             </div>
         )
     }
+}
+
+TextField.propTypes = {
+    type: PropTypes.string.isRequired,
+    label: PropTypes.string,
+    input: PropTypes.object.isRequired,
+    meta: PropTypes.object.isRequired,
+    trigger: PropTypes.object
 }

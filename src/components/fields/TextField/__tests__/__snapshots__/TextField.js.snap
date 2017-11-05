@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TextField Проверка TextField снапшота 1`] = `
+<div
+  className="dashboard-field-text dashboard-field-text_filled"
+>
+  <input
+    className="dashboard-field-text-input"
+    onBlur={[Function]}
+    onChange={[Function]}
+    onFocus={[Function]}
+    type="text"
+    value="user@email.com"
+  />
+  <div
+    className="dashboard-field-text-label"
+  >
+    Email
+  </div>
+</div>
+`;

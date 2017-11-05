@@ -1,5 +1,7 @@
+$dashboard-textfield-trigger-error-color: #cd5c5c;
 $dashboard-textfield-border-color: #adb3b8;
 $dashboard-textfield-border-focused-color: #6495ed;
+$dashboard-textfield-border-error-color: $dashboard-textfield-trigger-error-color;
 
 .dashboard-field-text {
   border: .5px solid $dashboard-textfield-border-color;
@@ -24,6 +26,10 @@ $dashboard-textfield-border-focused-color: #6495ed;
       font-size: 10px;
       top: 3px;
     }
+  }
+
+  &_error {
+    border: .5px solid $dashboard-textfield-border-error-color;
   }
 
   &-input {
@@ -54,7 +60,7 @@ $dashboard-textfield-border-focused-color: #6495ed;
     width: 20px;
 
     &_error {
-      color: indianred;
+      color: $dashboard-textfield-trigger-error-color;
     }
 
     &-icon {

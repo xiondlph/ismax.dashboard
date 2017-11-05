@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Trigger Проверка Trigger снапшота 1`] = `
+<div
+  className="dashboard-field-text-trigger dashboard-field-text-trigger_default"
+>
+  <span
+    className="dashboard-field-text-trigger-icon fa fa-icon"
+    data-tip="trigger"
+    data-type="default"
+    onClick={[Function]}
+  />
+</div>
+`;

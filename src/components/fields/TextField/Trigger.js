@@ -37,7 +37,7 @@ class Trigger extends Component {
 Trigger.propTypes = {
     tip: PropTypes.string.isRequired,
     icon: PropTypes.string.isRequired,
-    type: PropTypes.string.isRequired,
+    type: PropTypes.string,
     handler: PropTypes.func
 }
 

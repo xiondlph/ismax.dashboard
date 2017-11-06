@@ -4,6 +4,8 @@
 
 import Settings from './Settings'
 
+import './Form.scss'
+
 export {
     Settings
 }

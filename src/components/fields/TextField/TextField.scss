@@ -6,12 +6,12 @@ $dashboard-textfield-border-error-color: $dashboard-textfield-trigger-error-colo
 .dashboard-field-text {
   border: .5px solid $dashboard-textfield-border-color;
   background-color: white;
+  margin-bottom: 10px;
   border-radius: 3px;
   position: relative;
   padding-right: 5px;
   display: flex;
   height: 37px;
-  margin: 10px;
 
   &_focused {
     border: .5px solid $dashboard-textfield-border-focused-color;

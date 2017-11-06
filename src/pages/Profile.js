@@ -24,7 +24,16 @@ class Profile extends Component {
             }
 
         return (
-            <Settings saveProfile={::this.saveProfile} initialValues={settingsValues}/>
+            <div className='dashboard-page'>
+                <div className='dashboard-page-row'>
+                    <Settings saveProfile={::this.saveProfile} initialValues={settingsValues}/>
+                    <Settings saveProfile={::this.saveProfile} initialValues={settingsValues}/>
+                </div>
+                <div className='dashboard-page-row'>
+                    <Settings saveProfile={::this.saveProfile} initialValues={settingsValues}/>
+                    <Settings saveProfile={::this.saveProfile} initialValues={settingsValues}/>
+                </div>
+            </div>
         )
     }
 }

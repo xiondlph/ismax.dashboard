@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button Проверка Button снапшота 1`] = `
+<button
+  className="dashboard-field-button"
+  disabled={false}
+  type="button"
+>
+  Action
+</button>
+`;
+
+exports[`Button Проверка disable состояния для button 1`] = `
+<button
+  className="dashboard-field-button"
+  disabled={true}
+  type="button"
+>
+  Action
+</button>
+`;

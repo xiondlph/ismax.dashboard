@@ -4,7 +4,8 @@
 
 import React, { Component } from 'react'
 import { Field, reduxForm } from 'redux-form'
-import { TextField } from '../fields'
+import classNames from 'classnames'
+import { TextField, Button } from '../fields'
 
 class SettingsForm extends Component {
     settingsSubmit(values) {
@@ -43,23 +44,34 @@ class SettingsForm extends Component {
             }
 
         return (
-            <form onSubmit={handleSubmit(::this.settingsSubmit)}>
-                <Field
-                    name='email'
-                    component={TextField}
-                    type='text'
-                    validate={this.email}
-                    label='E-mail'
-                    triggers={triggers.email}
-                />
-                <Field
-                    name='address'
-                    component={TextField}
-                    type='text'
-                    label='IP адрес'
-                />
-                <div>
-                    <button type='submit' disabled={pristine || submitting}>Сохранить</button>
+            <form
+                className={classNames({
+                    'dashboard-form': true,
+                    'dashboard-form-settings': true
+                })}
+                onSubmit={handleSubmit(::this.settingsSubmit)}
+            >
+                <div className='dashboard-form-header'>
+                    <span className='dashboard-form-header-title'>Настройки</span>
+                </div>
+                <div className='dashboard-form-body'>
+                    <Field
+                        name='email'
+                        component={TextField}
+                        type='text'
+                        validate={this.email}
+                        label='E-mail'
+                        triggers={triggers.email}
+                    />
+                    <Field
+                        name='address'
+                        component={TextField}
+                        type='text'
+                        label='IP адрес'
+                    />
+                </div>
+                <div className='dashboard-form-buttons'>
+                    <Button type='submit' disabled={pristine || submitting}>Сохранить</Button>
                 </div>
             </form>
         )

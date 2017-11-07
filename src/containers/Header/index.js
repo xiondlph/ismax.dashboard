@@ -41,12 +41,12 @@ export default class Header extends Component {
                     'dashboard-header-logo': true,
                     'dashboard-header-logo_collapsed': collapsed
                 })}>
-                    <span className='dashboard-header-logo-icon'></span>
+                    <span className='dashboard-header-logo-icon' />
                     ISMAX icsystem
                 </div>
                 <div className='dashboard-header-toolbar'>
                     <a className='dashboard-header-toolbar-btn dashboard-header-toolbar-btn-toggle' onClick={::this.toggleSidebarState}>
-                        <span className='dashboard-header-toolbar-btn-toggle-icon fa fa-navicon'></span>
+                        <span className='dashboard-header-toolbar-btn-toggle-icon fa fa-navicon' />
                     </a>
 
                     <a className={classNames(
@@ -54,18 +54,25 @@ export default class Header extends Component {
                         'dashboard-header-toolbar-btn-toggle',
                         'dashboard-header-toolbar-btn-toggle_mobile')
                     } onClick={::this.expandMobileSidebarState}>
-                        <span className='dashboard-header-toolbar-btn-toggle-icon fa fa-navicon'></span>
+                        <span className='dashboard-header-toolbar-btn-toggle-icon fa fa-navicon' />
                     </a>
 
-                    <a className='dashboard-header-toolbar-btn dashboard-header-toolbar-btn-logout' data-tip='Выход'>
-                        <span className='dashboard-header-toolbar-btn-toggle-icon fa fa-power-off'></span>
-                    </a>
+                    {profile.email && (
+                        <a className='dashboard-header-toolbar-btn dashboard-header-toolbar-btn-logout' data-tip='Выход'>
+                            <span className='dashboard-header-toolbar-btn-toggle-icon fa fa-power-off' />
+                        </a>
+                    )}
 
-                    <a className='dashboard-header-toolbar-label'>{ profile.email }</a>
+                    {profile.email && (
+                        <a className='dashboard-header-toolbar-label'>{ profile.email }</a>
+                    )}
 
-                    <a className='dashboard-header-toolbar-photo'>
-                        <span className='dashboard-header-toolbar-photo-icon fa fa-user-circle-o'></span>
-                    </a>
+                    {profile.email && (
+                        <a className='dashboard-header-toolbar-photo'>
+                            <span className='dashboard-header-toolbar-photo-icon fa fa-user-circle-o' />
+                        </a>
+                    )}
+
                 </div>
             </div>
         )

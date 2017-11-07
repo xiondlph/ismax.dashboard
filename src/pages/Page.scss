@@ -1,11 +1,1 @@
-.dashboard-page {
-  &-row {
-    flex-direction: row;
-    flex-wrap: wrap;
-    display: flex;
-
-    @include respond-to(mobile) {
-      flex-direction: column;
-    }
-  }
-}
+.dashboard-page {}

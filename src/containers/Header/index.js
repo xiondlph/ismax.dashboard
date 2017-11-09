@@ -68,8 +68,8 @@ export default class Header extends Component {
                     )}
 
                     {profile.email && (
-                        <a className='dashboard-header-toolbar-photo'>
-                            <span className='dashboard-header-toolbar-photo-icon fa fa-user-circle-o' />
+                        <a className='dashboard-header-toolbar-picture'>
+                            <span className='dashboard-header-toolbar-picture-icon fa fa-user-circle-o' />
                         </a>
                     )}
 

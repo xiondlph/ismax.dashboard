@@ -1,6 +1,16 @@
+$dashboard-header-height: $basic-size-panel-collapsed;
+$dashboard-header-logo-collapsed-width: $basic-size-panel-collapsed;
+$dashboard-header-logo-expanded-width: $basic-size-panel-expanded;
+
+$dashboard-header-text-color: $dashboard-base-text-gray-color;
+$dashboard-header-logo-background-color: $dashboard-base-pink-color;
+$dashboard-header-logo-text-color: $dashboard-base-text-light-color;
+$dashboard-header-toolbar-picture-color: $dashboard-header-user-photo-color;
+
 .dashboard-header {
-  @include box-shadow(0, 1px, 2px, 0, rgba(0, 0, 0, 0.2));
+  @include box-shadow(0, 1px, 2px, 0, $dashboard-base-shadow-color);
   line-height: $dashboard-header-height;
+  color: $dashboard-header-text-color;
   height: $dashboard-header-height;
   flex-direction: row;
   display: flex;
@@ -8,9 +18,9 @@
   z-index: 2;
 
   &-logo {
-    background-color: $dashboard-header-logo-bg-color;
+    background-color: $dashboard-header-logo-background-color;
     width: $dashboard-header-logo-expanded-width;
-    color: $dashboard-text-color-white;
+    color: $dashboard-header-logo-text-color;
     height: $dashboard-header-height;
     transition: width 0.5s;
     white-space: nowrap;
@@ -49,7 +59,6 @@
     flex: 1;
 
     &-btn {
-      color: $dashboard-text-color-gray;
       text-align: center;
       line-height: 24px;
       cursor: pointer;
@@ -79,7 +88,6 @@
     }
 
     &-label {
-      color: $dashboard-text-color-gray;
       display: inline-block;
       margin-right: 10px;
       line-height: 24px;
@@ -87,8 +95,8 @@
       height: 24px;
     }
 
-    &-photo {
-      color: $dashboard-header-user-photo-color;
+    &-picture {
+      color: $dashboard-header-toolbar-picture-color;
       display: inline-block;
       margin-right: 10px;
       line-height: 24px;

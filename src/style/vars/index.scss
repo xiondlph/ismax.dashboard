@@ -1,16 +1,28 @@
 $fa-font-path: "~font-awesome/fonts";
 
 // Общие Цвета
-$dashboard-color-white: #ffffff;
-$dashboard-color-black: #32404e;
-$dashboard-color-green: #5f9ea0;
-$dashboard-color-pink: #e05d6f;
-$dashboard-color-body: #f4f3eb;
+$dashboard-base-light-color: #ffffff;
+$dashboard-base-dark-color: #32404e;
+$dashboard-base-green-color: #5f9ea0;
+$dashboard-base-pink-color: #e05d6f;
+$dashboard-base-body-background-color: #f4f3eb;
+
+// Общие цвета текста
+$dashboard-base-text-light-color: #ffffff;
+$dashboard-base-text-gray-color: #919191;
+
+// Цвет теней
+$dashboard-base-shadow-color: rgba(0, 0, 0, 0.2);
+
+// Базовые размеры
+$basic-size-panel-collapsed: 64px;
+$basic-size-panel-expanded: 250px;
 
 
-$dashboard-text-color-white: #ffffff;
-$dashboard-text-color-gray: #919191;
 
+
+$dashboard-text-color-white: $dashboard-base-text-light-color;
+$dashboard-text-color-gray: $dashboard-base-text-gray-color;
 //Шапка
 $dashboard-header-height: 64px;
 $dashboard-header-logo-expanded-width: 250px;

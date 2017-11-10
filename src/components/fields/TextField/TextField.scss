@@ -1,7 +1,11 @@
-$dashboard-textfield-trigger-error-color: #cd5c5c;
 $dashboard-textfield-border-color: #adb3b8;
-$dashboard-textfield-border-focused-color: #6495ed;
-$dashboard-textfield-border-error-color: $dashboard-textfield-trigger-error-color;
+$dashboard-textfield-focused-border-color: #6495ed;
+$dashboard-textfield-error-border-color: $dashboard-base-pink-color;
+
+$dashboard-textfield-label-text-color: $dashboard-textfield-border-color;
+$dashboard-textfield-focused-label-text-color: $dashboard-textfield-focused-border-color;
+$dashboard-textfield-trigger-text-color: $dashboard-base-text-gray-color;
+$dashboard-textfield-trigger-error-text-color: $dashboard-base-pink-color;
 
 .dashboard-field-text {
   border: .5px solid $dashboard-textfield-border-color;
@@ -14,10 +18,10 @@ $dashboard-textfield-border-error-color: $dashboard-textfield-trigger-error-colo
   height: 37px;
 
   &_focused {
-    border: .5px solid $dashboard-textfield-border-focused-color;
+    border: .5px solid $dashboard-textfield-focused-border-color;
 
     .dashboard-field-text-label {
-      color: $dashboard-textfield-border-focused-color;
+      color: $dashboard-textfield-focused-label-text-color;
     }
   }
 
@@ -29,12 +33,14 @@ $dashboard-textfield-border-error-color: $dashboard-textfield-trigger-error-colo
   }
 
   &_error {
-    border: .5px solid $dashboard-textfield-border-error-color;
+    border: .5px solid $dashboard-textfield-error-border-color;
   }
 
   &-input {
     background-color: transparent;
     padding: 16px 0 3px 10px;
+    text-overflow: ellipsis;
+    overflow: hidden;
     outline: none;
     border: none;
     height: 18px;
@@ -42,7 +48,7 @@ $dashboard-textfield-border-error-color: $dashboard-textfield-trigger-error-colo
   }
 
   &-label {
-    color: $dashboard-textfield-border-color;
+    color: $dashboard-textfield-label-text-color;
     transition: top .2s, font-size .2s;
     position: absolute;
     font-size: 14px;
@@ -51,7 +57,7 @@ $dashboard-textfield-border-error-color: $dashboard-textfield-trigger-error-colo
   }
 
   &-trigger {
-    color: $dashboard-text-color-gray;
+    color: $dashboard-textfield-trigger-text-color;
     text-align: center;
     line-height: 37px;
     font-size: 15px;
@@ -60,7 +66,7 @@ $dashboard-textfield-border-error-color: $dashboard-textfield-trigger-error-colo
     width: 20px;
 
     &_error {
-      color: $dashboard-textfield-trigger-error-color;
+      color: $dashboard-textfield-trigger-error-text-color;
     }
 
     &-icon {

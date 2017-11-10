@@ -6,6 +6,8 @@ $dashboard-base-dark-color: #32404e;
 $dashboard-base-green-color: #5f9ea0;
 $dashboard-base-pink-color: #e05d6f;
 $dashboard-base-body-background-color: #f4f3eb;
+$dashboard-base-panel-header-background-color: #aeaeae;
+$dashboard-base-panel-toolbar-background-color: #ececec;
 
 // Общие цвета текста
 $dashboard-base-text-light-color: #ffffff;
@@ -17,28 +19,3 @@ $dashboard-base-shadow-color: rgba(0, 0, 0, 0.2);
 // Базовые размеры
 $basic-size-panel-collapsed: 64px;
 $basic-size-panel-expanded: 250px;
-
-
-
-
-$dashboard-text-color-white: $dashboard-base-text-light-color;
-$dashboard-text-color-gray: $dashboard-base-text-gray-color;
-//Шапка
-$dashboard-header-height: 64px;
-$dashboard-header-logo-expanded-width: 250px;
-$dashboard-header-logo-collapsed-width: $dashboard-header-height;
-$dashboard-header-logo-bg-color: #e05d6f;
-$dashboard-header-user-photo-color: #5f9ea0;
-
-// Сайдбар
-$dashboard-sidebar-gb-color: #32404e;
-$dashboard-sidebar-menu-item-text-color: #adb3b8;
-$dashboard-sidebar-menu-item-hover-bg-color: #3c4a57;
-$dashboard-sidebar-menu-item-active-bg-color: #475360;
-$dashboard-sidebar-menu-item-marker-bg-color: $dashboard-header-logo-bg-color;
-$dashboard-sidebar-expanded-width: $dashboard-header-logo-expanded-width;
-$dashboard-sidebar-collapsed-width: $dashboard-header-height;
-$dashboard-sidebar-menu-item-height: $dashboard-header-height;
-
-// Контентная часть
-$dashboard-content-bg-color: #f4f3eb;

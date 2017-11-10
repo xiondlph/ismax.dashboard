@@ -55,15 +55,31 @@ export default class MobileSidebar extends Component {
                             <span className='dashboard-sidebar-mobile-menu-logo-icon' />
                             ISMAX icsystem
                         </div>
-                        <NavLink to='/' activeClassName='dashboard-sidebar-mobile-menu-item_active' exact className='dashboard-sidebar-mobile-menu-item'>
+                        <NavLink
+                            to='/'
+                            activeClassName='dashboard-sidebar-mobile-menu-item_active'
+                            exact
+                            className='dashboard-sidebar-mobile-menu-item'
+                            onClick={::this.collapseMobileSidebarState}
+                        >
                             <span className='dashboard-sidebar-mobile-menu-item-icon fa fa-user' />
                             <div className='dashboard-sidebar-mobile-menu-item-text'>Профиль</div>
                         </NavLink>
-                        <NavLink to='/payment' activeClassName='dashboard-sidebar-mobile-menu-item_active' className='dashboard-sidebar-mobile-menu-item'>
+                        <NavLink
+                            to='/payment'
+                            activeClassName='dashboard-sidebar-mobile-menu-item_active'
+                            className='dashboard-sidebar-mobile-menu-item'
+                            onClick={::this.collapseMobileSidebarState}
+                        >
                             <span className='dashboard-sidebar-mobile-menu-item-icon fa fa-credit-card' />
                             <div className='dashboard-sidebar-mobile-menu-item-text'>Оплата</div>
                         </NavLink>
-                        <NavLink to='/referrals' activeClassName='dashboard-sidebar-mobile-menu-item_active' className='dashboard-sidebar-mobile-menu-item'>
+                        <NavLink
+                            to='/referrals'
+                            activeClassName='dashboard-sidebar-mobile-menu-item_active'
+                            className='dashboard-sidebar-mobile-menu-item'
+                            onClick={::this.collapseMobileSidebarState}
+                        >
                             <span className='dashboard-sidebar-mobile-menu-item-icon fa fa-users' />
                             <div className='dashboard-sidebar-mobile-menu-item-text'>Рефералы</div>
                         </NavLink>

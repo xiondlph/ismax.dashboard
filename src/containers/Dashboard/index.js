@@ -33,11 +33,18 @@ class Dashboard extends Component {
                 <div className='dashboard'>
                     <Header
                         sidebar={sidebar}
+                        mobileSidebar={mobileSidebar}
                         profile={profile}
                         setSidebarState={setSidebarState}
                         setMobileSidebarState={setMobileSidebarState}
                     />
-                    <Main sidebar={sidebar} notice={notice} noticeMessage={noticeMessage} hideNotice={hideNotice}>
+                    <Main
+                        sidebar={sidebar}
+                        mobileSidebar={mobileSidebar}
+                        notice={notice}
+                        noticeMessage={noticeMessage}
+                        hideNotice={hideNotice}
+                    >
                         { this.props.children }
                     </Main>
                     <MobileSidebar sidebar={mobileSidebar} setMobileSidebarState={setMobileSidebarState} />

@@ -1,7 +1,13 @@
+$dashboard-main-content-background-color: $dashboard-base-body-background-color;
+
 .dashboard-main {
   overflow: auto;
   z-index: 1;
   flex: 1;
+
+  &_blur {
+    filter: blur(1px)
+  }
 
   &-wrap {
     min-height: 100%;
@@ -15,7 +21,7 @@
       min-height: calc(100vh - 65px);
     }
 
-    background-color: $dashboard-content-bg-color;
+    background-color: $dashboard-main-content-background-color;
     flex: 1;
   }
 }

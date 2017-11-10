@@ -32,11 +32,14 @@ export default class Header extends Component {
 
     render() {
         const
-            { sidebar, profile } = this.props,
+            { sidebar, mobileSidebar, profile } = this.props,
             collapsed = sidebar === DASHBOARD_SIDEBAR_STATE_COLLAPSED
 
         return (
-            <div className='dashboard-header'>
+            <div className={classNames({
+                'dashboard-header': true,
+                'dashboard-header_blur': mobileSidebar === DASHBOARD_SIDEBAR_STATE_EXPANDED
+            })}>
                 <div className={classNames({
                     'dashboard-header-logo': true,
                     'dashboard-header-logo_collapsed': collapsed
@@ -81,6 +84,7 @@ export default class Header extends Component {
 
 Header.propTypes = {
     sidebar: PropTypes.string.isRequired,
+    mobileSidebar: PropTypes.string.isRequired,
     profile: PropTypes.object.isRequired,
     setSidebarState: PropTypes.func.isRequired,
     setMobileSidebarState: PropTypes.func.isRequired

@@ -1,25 +1,26 @@
-$dashboard-field-button-bg: $dashboard-header-user-photo-color;
-$dashboard-field-button-disabled-color: #ececec;
+$dashboard-field-button-background: $dashboard-base-green-color;
+$dashboard-field-button-text-color: $dashboard-base-text-light-color;
+$dashboard-field-button-disabled-text-color: #ececec;
 
 .dashboard-field-button {
-  background-color: $dashboard-field-button-bg;
-  color: $dashboard-text-color-white;
+  background-color: $dashboard-field-button-background;
+  color: $dashboard-field-button-text-color;
   padding: 5px 10px;
   cursor: pointer;
   outline: none;
   border: none;
 
   &:disabled {
-    background-color: lighten($dashboard-field-button-bg, 10%);
-    color: $dashboard-field-button-disabled-color;
+    background-color: lighten($dashboard-field-button-background, 10%);
+    color: $dashboard-field-button-disabled-text-color;
     cursor: default;
   }
 
   &:hover:not(:disabled) {
-    background-color: adjust-hue($dashboard-field-button-bg, 10%);
+    background-color: adjust-hue($dashboard-field-button-background, 10%);
   }
 
   &:active:hover {
-    background-color: darken($dashboard-field-button-bg, 10%);
+    background-color: darken($dashboard-field-button-background, 10%);
   }
 }

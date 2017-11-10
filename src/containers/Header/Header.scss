@@ -5,17 +5,27 @@ $dashboard-header-logo-expanded-width: $basic-size-panel-expanded;
 $dashboard-header-text-color: $dashboard-base-text-gray-color;
 $dashboard-header-logo-background-color: $dashboard-base-pink-color;
 $dashboard-header-logo-text-color: $dashboard-base-text-light-color;
-$dashboard-header-toolbar-picture-color: $dashboard-header-user-photo-color;
+$dashboard-header-toolbar-picture-color: $dashboard-base-green-color;
 
 .dashboard-header {
   @include box-shadow(0, 1px, 2px, 0, $dashboard-base-shadow-color);
   line-height: $dashboard-header-height;
   color: $dashboard-header-text-color;
   height: $dashboard-header-height;
+  transition: height 0.3s;
   flex-direction: row;
+  overflow-y: hidden;
   display: flex;
   width: 100%;
   z-index: 2;
+
+  &_blur {
+    filter: blur(1px)
+  }
+
+  @include height-compressed {
+    height: 0;
+  }
 
   &-logo {
     background-color: $dashboard-header-logo-background-color;

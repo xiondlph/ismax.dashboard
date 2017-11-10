@@ -1,5 +1,8 @@
-$dashboard-form-header-bg: #aeaeae;
-$dashboard-form-buttons-bg: #ececec;
+$dashboard-form-header-background-color: $dashboard-base-panel-header-background-color;
+$dashboard-form-body-background-color: $dashboard-base-light-color;
+$dashboard-form-buttons-background-color: $dashboard-base-panel-toolbar-background-color;
+
+$dashboard-form-header-text-color: $dashboard-base-text-light-color;
 
 .dashboard-form {
   @include box-shadow(0, 1px, 2px, 0, rgba(0, 0, 0, 0.2));
@@ -12,18 +15,18 @@ $dashboard-form-buttons-bg: #ececec;
   }
 
   &-header {
-    background-color: $dashboard-form-header-bg;
-    color: $dashboard-text-color-white;
+    background-color: $dashboard-form-header-background-color;
+    color: $dashboard-form-header-text-color;
     padding: 10px;
   }
 
   &-body {
-    background-color: $dashboard-text-color-white;
+    background-color: $dashboard-form-body-background-color;
     padding: 10px;
   }
 
   &-buttons {
-    background-color: $dashboard-form-buttons-bg;
+    background-color: $dashboard-form-buttons-background-color;
     padding: 10px;
   }
 }

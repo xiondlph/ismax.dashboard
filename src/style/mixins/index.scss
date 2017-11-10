@@ -6,9 +6,13 @@
   box-shadow: $h-shadow $v-shadow $blur $spread $shadow-color;
 }
 
-//Миксин Media Queries
+//Миксин Media Queries по ширине
 @mixin respond-to($media) {
   @if $media == mobile {
-    @media screen and (max-width: 600px) { @content; }
+    @media screen and (max-width: 650px) { @content; }
   }
+}
+
+@mixin height-compressed() {
+  @media screen and (max-height: 128px) { @content; }
 }

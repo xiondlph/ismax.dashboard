@@ -3,6 +3,7 @@
  */
 
 import React, { Component } from 'react'
+import ReactDOM from 'react-dom'
 import PropTypes from 'prop-types'
 import classNames from 'classnames'
 import ReactTooltip from 'react-tooltip'
@@ -32,6 +33,14 @@ export default class TextField extends Component {
         this.updateLabelPosition()
     }
 
+    checkVisible(elem) {
+        const
+            rect = elem.getBoundingClientRect(),
+            viewHeight = Math.max(document.documentElement.clientHeight, window.innerHeight);
+
+        return !(rect.bottom < 0 || rect.top - viewHeight >= 0);
+    }
+
     updateLabelPosition() {
         const { input: { value } } = this.props
 
@@ -46,6 +55,21 @@ export default class TextField extends Component {
         const { input: { onChange } } = this.props
 
         onChange(e.target.value)
+    }
+
+    onFocus(e) {
+        const
+            { input: { onFocus } } = this.props,
+            elem = e.target,
+            field =  ReactDOM.findDOMNode(this)
+
+        setTimeout(() => {
+            if (!this.checkVisible(elem)) {
+                field.scrollIntoView({block: 'end', behavior: 'smooth'})
+            }
+        }, 500)
+
+        onFocus()
     }
 
     triggers() {
@@ -73,7 +97,7 @@ export default class TextField extends Component {
     render() {
         const
             {
-                input: { value, onFocus, onBlur },
+                input: { value, onBlur },
                 meta: { error, active },
                 label
             } = this.props
@@ -90,7 +114,7 @@ export default class TextField extends Component {
                     type='text'
                     value={value}
                     onChange={ ::this.onChange }
-                    onFocus={ onFocus }
+                    onFocus={ ::this.onFocus }
                     onBlur={ onBlur }
                 />
                 <div className='dashboard-field-text-label'>{label}</div>

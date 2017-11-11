@@ -1,14 +1,27 @@
+$dashboard-field-button-minWidth: 90px;
+$dashboard-field-button-height: 26px;
+
 $dashboard-field-button-background: $dashboard-base-green-color;
 $dashboard-field-button-text-color: $dashboard-base-text-light-color;
 $dashboard-field-button-disabled-text-color: #ececec;
 
 .dashboard-field-button {
   background-color: $dashboard-field-button-background;
+  min-width: $dashboard-field-button-minWidth;
   color: $dashboard-field-button-text-color;
+  height: $dashboard-field-button-height;
+  text-align: center;
   padding: 5px 10px;
   cursor: pointer;
   outline: none;
   border: none;
+
+  &_loading {
+    background-image: url("images/loading.gif");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 25px;
+  }
 
   &:disabled {
     background-color: lighten($dashboard-field-button-background, 10%);

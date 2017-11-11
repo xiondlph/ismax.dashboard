@@ -99,7 +99,8 @@ export default class TextField extends Component {
             {
                 input: { value, onBlur },
                 meta: { error, active },
-                label
+                label,
+                disabled
             } = this.props
 
         return (
@@ -113,9 +114,10 @@ export default class TextField extends Component {
                     className='dashboard-field-text-input'
                     type='text'
                     value={value}
-                    onChange={ ::this.onChange }
-                    onFocus={ ::this.onFocus }
-                    onBlur={ onBlur }
+                    onChange={::this.onChange}
+                    onFocus={::this.onFocus}
+                    onBlur={onBlur}
+                    disabled={disabled}
                 />
                 <div className='dashboard-field-text-label'>{label}</div>
                 {error && (<InvalidTrigger error={error}/>)}
@@ -130,5 +132,6 @@ TextField.propTypes = {
     label: PropTypes.string,
     input: PropTypes.object.isRequired,
     meta: PropTypes.object.isRequired,
-    trigger: PropTypes.object
+    trigger: PropTypes.object,
+    loading: PropTypes.bool
 }

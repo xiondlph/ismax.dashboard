@@ -8,13 +8,31 @@ import classNames from 'classnames'
 import { TextField, Button } from '../fields'
 
 class SettingsForm extends Component {
+    constructor(props) {
+        super(props)
+
+        this.state = {
+            loading: false
+        }
+    }
+
     settingsSubmit(values) {
         this.props.saveProfile(values);
+
+        this.setState({
+            loading: true
+        })
+
+        setTimeout(() => {
+            this.setState({
+                loading: false
+            })
+        }, 1000)
     }
 
     email(val){
         let result = val && !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(val)
-            ? 'meshkaz'
+            ? 'Некорректный адрес электронной почты'
             : undefined
 
         return result
@@ -22,23 +40,13 @@ class SettingsForm extends Component {
 
     render() {
         const
+            { loading } = this.state,
             { handleSubmit, pristine, submitting} = this.props,
             triggers = {
-                email: {
+                address: {
                     info: {
-                        tip: 'meshkaz',
-                        icon: 'question',
-                        handler() {
-                            console.log('info');
-                        }
-                    },
-
-                    payment: {
-                        tip: 'Пополнить запросы',
-                        icon: 'credit-card',
-                        handler() {
-                            console.log('Оплата')
-                        }
+                        tip: 'В целях безопасности, доступ к API осуществляться исключительно с IP адреса привязанного к Вашему аккаунту.',
+                        icon: 'question'
                     }
                 }
             }
@@ -61,17 +69,23 @@ class SettingsForm extends Component {
                         type='text'
                         validate={this.email}
                         label='E-mail'
-                        triggers={triggers.email}
+                        disabled={loading}
                     />
                     <Field
                         name='address'
                         component={TextField}
                         type='text'
                         label='IP адрес'
+                        triggers={triggers.address}
+                        disabled={loading}
                     />
                 </div>
                 <div className='dashboard-form-buttons'>
-                    <Button type='submit' disabled={pristine || submitting}>Сохранить</Button>
+                    <Button
+                        type='submit'
+                        disabled={pristine || submitting}
+                        loading={loading}
+                    >Сохранить</Button>
                 </div>
             </form>
         )
